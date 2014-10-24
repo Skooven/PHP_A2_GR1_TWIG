@@ -1,0 +1,15 @@
+{
+    "name": "skooven/php_a2_gr1_twig",
+    "description": "Twig 2",
+    "require": {
+        "twig/twig": "~1.16"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Skooven",
+            "email": "afonso.jordann@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

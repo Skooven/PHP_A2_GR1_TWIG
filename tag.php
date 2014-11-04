@@ -20,3 +20,5 @@ if (!empty($_GET['id'])) {
 require __DIR__.'/_footer.php';
 
 include __DIR__.'/template/articles.php';
+
+

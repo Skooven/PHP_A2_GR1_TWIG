@@ -6,9 +6,18 @@
 
 require __DIR__.'/_header.php';
 
+$isConnected = isConnected();
+
+$username = getSession()['username'];
+
 if (!empty($_GET['id'])) {
     $id = (int) $_GET['id'];
     $article = getArticle($link, $id);
+    echo $twig->render('article.html.twig', [
+        'article' => $article,
+        'isConnected' => $isConnected,
+        'username' => $username,
+    ]);
     if (!$article) {
         header('Location: index.php');
     }
@@ -18,4 +27,4 @@ if (!empty($_GET['id'])) {
 
 require __DIR__.'/_footer.php';
 
-include __DIR__.'/template/article.php';
+

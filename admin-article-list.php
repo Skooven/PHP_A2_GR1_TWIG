@@ -7,7 +7,17 @@
 require __DIR__.'/_header-admin.php';
 
 $articles = getArticles($link);
+$isConnected = isConnected();
+$username = getSession()['username'];
 
-include __DIR__.'/template/admin-article-list.php';
+if($isConnected == false || $username != 'admin'){
+    header('Location: index.php');
+}
+
+echo $twig->render('admin-article-list.html.twig', [
+    'articles' => $articles,
+    'isConnected' => $isConnected,
+    'username' => $username,
+]);
 
 require __DIR__.'/_footer.php';

@@ -48,4 +48,3 @@
         <button type="submit" class="btn btn-default" name="contactSubmit">Contact webmaster</button>
     </form>
 
-<?php include __DIR__.'/_footer.php'; ?>

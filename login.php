@@ -10,6 +10,9 @@ if (isConnected()) {
     header('Location: index.php');
 }
 
+$missing_credential = false;
+$credential_error = false;
+
 if (isset($_POST['loginSubmit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -24,8 +27,17 @@ if (isset($_POST['loginSubmit'])) {
             $credential_error = true;
         }
     }
+
 }
 
-include __DIR__.'/template/login.php';
+$isConnected = isConnected();
+$username = getSession()['username'];
+
+echo $twig->render('login.html.twig', [
+    'missing_credential' => $missing_credential,
+    'credential_error' => $credential_error,
+    'isConnected' => $isConnected,
+    'username' => $username,
+]);
 
 require __DIR__.'/_footer.php';

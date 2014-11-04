@@ -8,6 +8,14 @@ require __DIR__.'/_header.php';
 
 $articles = getArticles($link);
 
+$isConnected = isConnected();
+
+$username = getSession()['username'];
+
 require __DIR__.'/_footer.php';
 
-include __DIR__.'/template/articles.php';
+echo $twig->render('articles.html.twig', [
+    'articles' => $articles,
+    'isConnected' => $isConnected,
+    'username' => $username,
+]);

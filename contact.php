@@ -23,6 +23,16 @@ if (isset($_POST['contactSubmit'])) {
     }
 }
 
-require __DIR__.'/_footer.php';
 
 include __DIR__.'/template/contact.php';
+
+$username = getSession()['username'];
+$isConnected = isConnected();
+
+
+require __DIR__.'/_footer.php';
+
+echo $twig->render('articles.html.twig', [
+    'isConnected' => $isConnected,
+    'username' => $username,
+]);

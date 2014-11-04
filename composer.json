@@ -1,14 +1,14 @@
 {
-    "name": "skooven/php_a2_gr1_twig",
-    "description": "Twig 2",
+    "name": "charlesbap/php_a2_gr1_twig",
+    "description": "HEY!",
     "require": {
         "twig/twig": "~1.16"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Skooven",
-            "email": "afonso.jordann@gmail.com"
+            "name": "Charles Barbier",
+            "email": "charles.barbier.09@gmail.com"
         }
     ],
     "minimum-stability": "stable"
